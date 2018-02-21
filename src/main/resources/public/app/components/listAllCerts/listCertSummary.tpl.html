@@ -1,0 +1,41 @@
+<div>
+	<div class="panel panel-default">
+		<div class="panel-heading" ng-bind="entry.entity.subject"></div>
+		<div class="panel-body">
+			<label class="col-sm-4 control-label">Valid From</label>
+			<p class="col-sm-8 form-control-static"
+				ng-bind="entry.entity.validFrom"></p>
+			<label class="col-sm-4 control-label">Valid To</label>
+			<p class="col-sm-8 form-control-static"
+				ng-bind="entry.entity.validTo"></p>
+			<label class="col-sm-4 control-label">Key Algorithm</label>
+			<p class="col-sm-8 form-control-static"
+				ng-bind="entry.entity.keyAlgorithm"></p>
+			<label class="col-sm-4 control-label">Revoked</label>
+			<p class="col-sm-8 form-control-static" ng-bind="entry.entity.revoked"></p>
+			<button class="btn btn-default" ui-sref="viewEntity"
+				ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">view</button>
+			<button class="btn btn-default"
+				ng-click="lac.setSelectedEntry(entry.entity.serialNumber);lac.deleteSelectedEntry()">delete</button>
+			<button class="btn btn-default" ng-hide="entry.entity.revoked"
+				ng-click="lac.setSelectedEntry(entry.entity.serialNumber);lac.revokeSelectedEntry()">revoke</button>	
+			<div ng-if="entry.entity.issuingAuthority === true">
+				<button class="btn btn-default" ui-sref="createIA"
+					ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">Create IA</button>
+				<button class="btn btn-default" ui-sref="createIAFromCsr"
+					ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">Create IA from CSR</button>
+				<button class="btn btn-default" ui-sref="createEE"
+					ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">Create End Entity</button>
+				<button class="btn btn-default" ui-sref="createEEFromCsr"
+					ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">Create End Entity from CSR</button>
+				<button class="btn btn-default" ui-sref="createCrl"
+					ng-click="lac.setSelectedEntry(entry.entity.serialNumber)">Create ARL/CRL</button>
+			</div>
+		</div>
+	</div>
+	<div ng-if="entry.children.length > 0" style="padding-left:20px">
+		<div ng-repeat="entry in entry.children">
+			<div ng-include="'app/components/listAllCerts/listCertSummary.tpl.html'"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+<div>
+	<h1>List Users</h1>
+	<div class="panel panel-default">
+
+	</div>
+	<hr />
+	<label>Users:</label>
+	<div>
+	<div ng-repeat="item in lu.response.users" class="col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"></div>
+			<div class="panel-body">
+				<label class="col-sm-4 control-label">Username</label><p class="col-sm-8 form-control-static" ng-bind="item.username"></p>
+				<label class="col-sm-4 control-label">First</label><p class="col-sm-8 form-control-static" ng-bind="item.first"></p>
+				<label class="col-sm-4 control-label">Last</label><p class="col-sm-8 form-control-static" ng-bind="item.last"></p>
+				<label class="col-sm-4 control-label">Email</label><p class="col-sm-8 form-control-static" ng-bind="item.email"></p>
+				<label class="col-sm-4 control-label">Role</label><p class="col-sm-8 form-control-static" ng-bind="item.role"></p>
+				
+				<button class="btn btn-default" ui-sref="editEntity" ng-click="lu.openUser()">view</button>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

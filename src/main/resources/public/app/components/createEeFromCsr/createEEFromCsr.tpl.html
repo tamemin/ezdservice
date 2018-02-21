@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-sm-8 col-sm-offset-2">
+
+		<div id="form-container">
+
+			<div class="page-header text-center">
+				<h2>Create an End Entity Certificate</h2>
+
+				<!-- the links to our nested states using relative paths -->
+				<!-- add the active class if the state matches our ui-sref -->
+				<div id="status-buttons" class="text-center">
+					<a ui-sref-active="active" ui-sref=".keys" class="{{ee.formData.keyPair.$valid?'valid':'invalid'}}"><span>1</span> Keys</a>
+					<a ui-sref-active="active" ui-sref=".basics" class="{{ee.formData.basics.$valid?'valid':'invalid'}}"><span>2</span>Basics</a>
+					<a ui-sref-active="active" ui-sref=".extensions" class="{{ee.forms.extensionsValid?'valid':'invalid'}}"><span>3</span>Extensions</a>
+				</div>
+			</div>
+
+			<!-- our nested state views will be injected here -->
+			<div id="form-views" ui-view></div>
+
+
+		</div>
+
+		<!-- show our formData as it is being typed -->
+		<!--     <pre>
+        {{ ee.formData }}
+    </pre> -->
+
+
+	</div>
+</div>

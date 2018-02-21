@@ -1,0 +1,6 @@
+<!-- use ng-submit to catch the form submission and use our Angular function -->
+<form name="createIaExtensionsForm" ng-submit="ee.processForm()" novalidate class="css-form">
+	
+	<div ng-if="ee.formData.extensions.$valid = createIaExtensionsForm.$valid"></div>
+	<button type="submit" class="btn btn-danger">Submit</button>
+</form>

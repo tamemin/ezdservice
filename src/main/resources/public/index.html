@@ -1,0 +1,38 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title></title>
+
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/angular-wizard.min.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<!-- 
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+ -->
+<script src="assets/libs/angular-1.5.8.js"></script>
+<script src="assets/libs/angular-animate-1.5.8.min.js"></script>
+<script src="assets/libs/angular-sanitize-1.5.8.js"></script>
+<script src="assets/libs/angular-touch-1.5.8.min.js"></script>
+<script src="assets/libs/angular-resource-1.5.8.min.js"></script>
+<script src="assets/libs/angular-ui-router-0.3.1.js"></script>
+<script src="assets/libs/ui-bootstrap-tpls-2.2.0.js"></script>
+<script src="assets/libs/angular-wizard.min.js"></script>    
+
+<script src="app/app.module.js"></script>
+<script src="app/components/nav/navCtrl.js"></script>
+<script src="app/components/listUsers/ListUsersCtrl.js"></script>
+<script src="app/components/addUser/AddUserCtrl.js"></script>
+<script src="app/components/default/defaultCtrl.js"></script>
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+	<div ng-include="'app/components/nav/nav.tpl.html'"></div>
+	<div ui-view class="container-fluid"></div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+.hide {
+	display: none;
+}
+
+.css-form textarea.ng-invalid.ng-touched {
+	border-color: #FA787E;
+}
+
+.css-form textarea.ng-valid.ng-touched {
+	border-color: #78FA89;
+}
+
+.css-form input.ng-invalid.ng-touched {
+	border-color: #FA787E;
+}
+
+.css-form input.ng-valid.ng-touched {
+	border-color: #78FA89;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
+}
+
+.required {
+  color: red;
+}
+
+.required label {
+    font-weight: bold;
+}
+.required label:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#000; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none; }
+
+/* we will style the span as the circled number */
+#status-buttons span            { background:#F0F0F0; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px; 
+    border-radius:50%; }
+    
+#status-buttons .valid span {
+	background:green;
+}
+
+#status-buttons .invalid span {
+	background:red;
+}  
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   { background:#00BC8C; }
+

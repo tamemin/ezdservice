@@ -1,0 +1,55 @@
+<div ng-controller="InjectEntityBasicsCtrl as basics">
+	<form name="createIaBasicsForm" novalidate
+		ng-submit="basics.onBasicsSubmit()" class="css-form">
+		<!-- <div class="form-group">
+	<label>Issuing Authority ID</label><input type="text"
+		name="issuingAuthorityId" ng-model="basics.formData.issuingAuthorityId"
+		class="form-control" placeholder="Issuing Authority ID" required />
+</div> -->
+		<div class="form-group">
+			<label>X500Name</label><input type="text" name="x500Name"
+				ng-model="basics.formData.x500Name" class="form-control"
+				placeholder="X500 Name" required />
+		</div>
+		<div class="form-group">
+			<label>Valid From</label>
+			<p class="input-group">
+				<input type="text" class="form-control" placeholder="dd/mm/yyyy"
+					uib-datepicker-popup ng-model="basics.formData.validFrom"
+					is-open="basics.popup1.opened"
+					datepicker-options="basics.dateOptions" ng-required="true"
+					close-text="Close" alt-input-formats="basics.altInputFormats" /> <span
+					class="input-group-btn">
+					<button type="button" class="btn btn-default"
+						ng-click="basics.open1()">
+						<i class="glyphicon glyphicon-calendar"></i>
+					</button>
+				</span>
+			</p>
+		</div>
+		<div class="form-group">
+			<label for="validTo">Valid To</label>
+			<p class="input-group">
+				<input type="text" class="form-control" placeholder="dd/mm/yyyy"
+					uib-datepicker-popup ng-model="basics.formData.validTo"
+					is-open="basics.popup2.opened"
+					datepicker-options="basics.dateOptions" ng-required="true"
+					close-text="Close" alt-input-formats="basics.altInputFormats" /> <span
+					class="input-group-btn">
+					<button type="button" class="btn btn-default"
+						ng-click="basics.open2()">
+						<i class="glyphicon glyphicon-calendar"></i>
+					</button>
+				</span>
+			</p>
+		</div>
+		<div class="form-group row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<div ng-if="basics.formData.$valid = createIaBasicsForm.$valid"></div>
+				<button type="submit" class="btn">
+					Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

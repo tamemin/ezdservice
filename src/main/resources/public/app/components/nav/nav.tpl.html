@@ -1,0 +1,19 @@
+<div ng-controller="NavCtrl as nav">
+	<ul class='menu nav nav-tabs'>
+		<li class="dropdown"
+			ng-class="{'open':item.active && item.subItems != null}"
+			ng-repeat="(sectionIndex,item) in nav.items"
+			ng-click="nav.showChilds($index)" {{item.sref!=null?
+			'ui-sref="{{item.sref}}"'}}><a
+			ng-class="{'dropdown-toggle':item.subItems.length > 0}" href="#"
+			role="button" aria-haspopup="{item.active && item.subItems != null}"
+			aria-expanded="false"> {{item.name}} <span class="caret"
+				ng-class="{'hide':item.subItems == null}"></span>
+		</a>
+			<ul class="sub-menu dropdown-menu">
+				<li ng-repeat="(subMenuIndex,subItem) in item.subItems"><a
+					ng-click="nav.selectedItem(sectionIndex, subMenuIndex)"
+					ui-sref="{{subItem.sref}}" ng-bind="subItem.name"></a></li>
+			</ul></li>
+	</ul>
+</div>

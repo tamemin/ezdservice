@@ -1,0 +1,37 @@
+<div>
+	<h1>Generate CRL</h1>
+	<div class="panel panel-default">
+		<div class="panel-heading">CRL Details</div>
+		<form class="panel-body">
+			<div class="form-group">
+				<label>Issuing Authority ID</label><input type="text"
+					name="issuingAuthorityId" ng-model="crl.data.issuingAuthorityId"
+					class="form-control" placeholder="Issuing Authority ID" required />
+			</div>
+			<div class="form-group">
+				<label>CRL Number</label><input type="text" name="crlNumber"
+					ng-model="crl.data.crlNumber" class="form-control"
+					placeholder="crl number" required />
+			</div>
+			<div class="form-group">
+				<label>Next Update At</label><input type="text" name="nextUpdateAt"
+					ng-model="crl.data.nextUpdateAt" class="form-control"
+					placeholder="dd/mm/yyyy" required />
+			</div>
+			<div class="form-group">
+				<label>SignatureAlgorithm</label><input type="text"
+					name="signatureAlgorithm" ng-model="crl.data.signatureAlgorithm"
+					placeholder="Certificate Signature Algorithm" class="form-control" />
+			</div>
+			<button ng-click="crl.createCrl()" type="submit"
+				class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	<div ng-show="crl.responseCrl">
+		<hr />
+		<label>CRL:</label> <textarea type="text" name="crl"
+			ng-model="crl.responseCrl"></textarea>
+		<button ui-sref="listAllCerts" type="submit"
+				class="btn btn-default">Back</button>
+	</div>
+</div>

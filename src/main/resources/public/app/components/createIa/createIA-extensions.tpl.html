@@ -1,0 +1,11 @@
+<!-- use ng-submit to catch the form submission and use our Angular function -->
+<form name="createIaExtensionsForm" ng-submit="ia.processForm()" novalidate class="css-form">
+	<div class="form-group">
+		<label>Max CA Chain Length</label><input type="text"
+			name="maxIssuingAuthorityChainLength"
+			ng-model="ia.formData.extensions.maxIssuingAuthorityChainLength"
+			class="form-control" placeholder="max CA chain length" />
+	</div>
+	<div ng-if="ia.formData.extensions.$valid = createIaExtensionsForm.$valid"></div>
+	<button type="submit" class="btn btn-danger">Submit</button>
+</form>

@@ -1,0 +1,10 @@
+<div>
+	<h1>List All Certificates</h1>
+	<label>Certificates:</label>
+	<div ng-if="lac.allowCreateRoot === true">
+		<button class="btn btn-default" ui-sref="initialiseRoot">Create A New Root Certificate</button>
+	</div>
+	<div ng-hide="lac.allowCreateRoot == true">
+		<div ng-repeat="entry in lac.certificateTree.entries" ng-include="'app/components/listAllCerts/listCertSummary.tpl.html'" class="col-sm-6"></div>
+	</div>
+</div>

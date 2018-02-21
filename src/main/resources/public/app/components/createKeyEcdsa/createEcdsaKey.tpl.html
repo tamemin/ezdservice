@@ -1,0 +1,16 @@
+<div>
+	<h1>Generate ECDSA Key</h1>
+	<div class="panel panel-default">
+		<div class="panel-heading">Key Generation Details</div>
+		<form name="keygen" class="panel-body">
+			<div class="form-group">
+				<label>Elliptic Curve</label><input type="text" name="curve"
+					ng-model="keys.curve" class="form-control" placeholder="Elliptic Curve"/>
+			</div>
+			<button ng-click="keys.generateEcdsaKey()" type="submit" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+	<hr />
+	<div ng-include="'app/shared/keypair/keypair.tpl.html'" ng-hide="keyPair = keys.response; keys.response == null"></div>
+
+</div>

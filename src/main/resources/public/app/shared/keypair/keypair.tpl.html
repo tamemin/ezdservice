@@ -1,0 +1,27 @@
+<div class="form-group">
+	<label>PublicKey</label>
+	<textarea type="text" name="publicKey" ng-model="keyPair.publicKey"
+		class="form-control" placeholder="Public Key" required></textarea>
+</div>
+<div class="panel panel-default">
+	<div class="panel-heading">Private Key</div>
+	<div class="panel-body">
+		<div class="form-group">
+			<label>Password</label><input type="text" name="privateKeyPassword"
+				ng-model="keyPair.privateKey.password" class="form-control"
+				placeholder="Private Key Encryption Password" required />
+		</div>
+		<div class="form-group">
+			<label>Encryption Algorithm</label><input type="text"
+				name="privateKeyEncryptionAlgorithm"
+				ng-model="keyPair.privateKey.encryptionAlgorithm" class="form-control"
+				placeholder="Private Key Encryption Algorithm" required />
+		</div>
+		<div class="form-group">
+			<label>Private Key</label>
+			<textarea type="text" name="privateKeyKey"
+				ng-model="keyPair.privateKey.key" class="form-control"
+				placeholder="Private Key" required></textarea>
+		</div>
+	</div>
+</div>

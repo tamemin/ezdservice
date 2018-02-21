@@ -1,0 +1,40 @@
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10">
+		<h1>Certificate entity</h1>
+		<button class="btn btn-default" ui-sref="listAllCerts">back</button>
+		<div class="panel panel-default">
+			<div class="panel-heading">Certificate Details</div>
+			<form class="panel-body">
+				<div class="form-group">
+					<label>X500Name</label> <input type="text" name="subject"
+						ng-model="vec.entity.subject" class="form-control"
+						placeholder="X500 Name" required />
+				</div>
+				<div class="form-group">
+					<label>Valid From</label> <input type="text" name="validFrom"
+						ng-model="vec.entity.validFrom" class="form-control"
+						placeholder="dd/mm/yyyy" required />
+				</div>
+				<div class="form-group">
+					<label for="validTo">Valid To</label><input type="text"
+						id="validTo" name="validTo" ng-model="vec.entity.validTo"
+						class="form-control" placeholder="dd/mm/yyyy" required />
+				</div>
+				<div class="form-group">
+					<label>CSR</label>
+					<textarea type="text" name="csr" ng-model="vec.entity.csr"
+						class="form-control" placeholder="CSR" required></textarea>
+				</div>
+				<div class="form-group">
+					<label>Certificate</label>
+					<textarea type="text" name="certificate" ng-model="vec.entity.certificate"
+						class="form-control" placeholder="Certificate" required></textarea>
+				</div>
+				<div ng-include="'app/shared/keypair/keypair.tpl.html'"></div>
+				
+			</form>
+		</div>
+	</div>
+	<div class="col-md-1"></div>
+</div>
